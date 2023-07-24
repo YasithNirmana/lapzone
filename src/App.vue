@@ -1,85 +1,79 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 </script>
 
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+<template>     
+  <div class="body">
+      <div class="header_top_bar">
+        <div class="htb_contact_info">
+          <span>info@lapzone.com</span>
+          <span>|</span>
+          <span>+1 234 567 8923</span>
+        </div>
+        <div class="htb_menu">
+          <span>Home</span>
+          <span>|</span>
+          <span>About Us</span>
+          <span>|</span>
+          <span>Contact Us</span>
+        </div>
+      </div>
+      <div class="header_main_bar">
+        <span class="hmb_logo">LAPZONE</span>
+          <div class="hmb_content">
+            <span class="hmb_categories_menu">Categories <span class="material-symbols-outlined">expand_more</span></span>
+            <div class="hmb_search">
+              <input type="text"/>
+              <span>|</span>
+              <select>
+                <option>All Categories</option>
+              </select>
+            </div>
+            <span class="material-symbols-outlined">person</span>
+            <span class="material-symbols-outlined">shopping_cart</span>
+        </div>
+      </div>
+        
+        <!-- <HelloWorld msg="You did it!" /> -->
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+        <!-- <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav> -->
+      
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
+    <!-- <RouterView /> -->
+  </div>
+  </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
+.body{
+  background-color: white;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.header_top_bar, .header_main_bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  padding: 5 5px;
 }
-
-nav {
+.htb_contact_info, .htb_menu{
+  display: flex;
+}
+.htb_contact_info span, .htb_menu span{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.hmb_logo{
+  font-size: 48px;
+  font-family: 'Braah One', sans-serif;
+  margin-left: 10px;
+}
+.hmb_content{
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+  display: flex;
+  margin-left: 20px;
 }
 </style>
