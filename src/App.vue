@@ -1,8 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>     
   <div class="body">
       <div class="header_top_bar">
@@ -22,7 +17,9 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="header_main_bar">
         <span class="hmb_logo">LAPZONE</span>
           <div class="hmb_content">
-            <span class="hmb_categories_menu">Categories <span class="material-symbols-outlined">expand_more</span></span>
+            <div class="hmb_content_categories_select">
+              <span class="hmb_categories_menu">Categories</span><span class="material-symbols-outlined">expand_more</span>
+            </div>
             <div class="hmb_search">
               <input type="text"/>
               <span>|</span>
@@ -30,10 +27,13 @@ import { RouterLink, RouterView } from 'vue-router'
                 <option>All Categories</option>
               </select>
             </div>
-            <span class="material-symbols-outlined">person</span>
-            <span class="material-symbols-outlined">shopping_cart</span>
+            <div class="hmb_content_icons">
+              <span class="material-symbols-outlined">person</span>
+              <span class="material-symbols-outlined">shopping_cart</span>
+            </div>
         </div>
       </div>
+      <hero></hero>
         
         <!-- <HelloWorld msg="You did it!" /> -->
 
@@ -46,6 +46,19 @@ import { RouterLink, RouterView } from 'vue-router'
     <!-- <RouterView /> -->
   </div>
   </template>
+
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+// import HelloWorld from './components/HelloWorld.vue'
+import Hero from './components/Hero.vue'
+
+export default{
+  components: {
+     Hero
+  }
+  
+}
+</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Braah+One&display=swap');
@@ -74,6 +87,16 @@ import { RouterLink, RouterView } from 'vue-router'
 .hmb_content{
   width: 100%;
   display: flex;
-  margin-left: 20px;
+  margin: 0 20px 0 10rem;
+  justify-content: space-between;
+}
+.hmb_content_categories_select{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hmb_search input[type="text"] {
+  width: 40rem;
+  height: 2rem;
 }
 </style>
